@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ 
+	<meta charset="UTF-8">
+		<title>文字跑马灯</title>
+	 <style>  
+            #move{  
+                position:absolute; 
+                width:500px;  
+                height:50px;  
+                top:200px;  
+                font-size: 50px;
+            }  
+        </style>  
+        <script>  
+        	//1、定义加载事件
+        	 window.onload = function(){  
+        	 	//2、获取到要移动的元素ID
+                moves = document.getElementById("move"); 
+                //alert((moves.style.left));
+                //3、设置元素的起始位置像素
+                moves.style.right = '-400px'; 
+                //4、调用移动方法
+                moveItRight();
+            } 
+            //定义方法
+            function moveItRight(){  
+            	//判断元素起始位置是否大于屏幕宽度
+              if(parseInt(moves.style.right) > (screen.width))
+                   //将其赋值为0
+                   moves.style.right = 0;
+                   //每调用一次加3个像素
+               moves.style.right = parseInt(moves.style.right)+3+'px'; 
+              setTimeout("moveItRight()",50);   // 在指定的毫秒数后调用函数  
+            }
+        </script>  
+    </head>  
+    <body>  
+        <div id="move"> 面朝大海 春暖花开 </div>  
+    </body>  
+</html>

@@ -1,0 +1,172 @@
+ol,
+ul {
+  list-style: none;
+}
+em,
+i,
+u {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ”;
+  content: none;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  font-size: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  zoom: 1;
+}
+
+.w1760 {
+  width: 17.6rem;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+}
+body {
+  width: 100%;
+  background: #3b3286 url('../../static/newimages/body_bg.jpg') no-repeat center top;
+  padding-bottom: 0.4rem;
+}
+.wrap {
+  width: 100%;
+  font-size: 0;
+   background-image: url("../../static/newimages/body_bg.jpg");
+}
+.titbar {
+  height: 1.3rem;
+}
+.titbar .logo,
+.titbar .mainnav,
+.titbar .top_toolbox {
+  position: absolute;
+}
+.titbar .logo {
+  left: 0;
+  top: 0.3rem;
+  width: 3rem;
+  height: 0.97rem;
+}
+.titbar .logo img {
+  width: 3rem;
+  height: 0.97rem;
+}
+.titbar .top_toolbox {
+  right: 0;
+  top: 0.37rem;
+}
+.titbar .top_toolbox img {
+  display: inline-block;
+  vertical-align: middle;
+}
+.titbar .top_toolbox li {
+  display: inline-block;
+  vertical-align: middle;
+}
+.titbar .top_toolbox .btn_history,
+.titbar .top_toolbox .btn_shoucang {
+  height: 0.5rem;
+  line-height: 0.5rem;
+  border-radius: 0.25rem;
+  color: #fff;
+  font-weight: lighter;
+  font-size: 0.22rem;
+  padding: 0 0.4rem; /*background-color:rgba(255,255,255,0.1);*/
+}
+.btn_login {
+  width: 0.36rem;
+  height: 0.36rem;
+  border-radius: 0.18rem;
+}
+.titbar .top_toolbox .btn_history img,
+.titbar .top_toolbox .btn_shoucang img {
+  margin-right: 0.2rem;
+}
+.titbar .top_toolbox .btn_history {
+  margin-right: 0.25rem;
+}
+.titbar .top_toolbox .btn_history img {
+  width: 0.3rem;
+  height: 0.28rem;
+}
+.titbar .top_toolbox .btn_shoucang {
+  margin-left: 0.25rem;
+}
+.titbar .top_toolbox .btn_shoucang img {
+  width: 0.3rem;
+  height: 0.28rem;
+}
+.tjbox h2 {
+  font-size: 0.48rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.06rem;
+  margin-top: 0.4rem;
+}
+.tjbox ul {
+  width: 18rem;
+}
+.tjbox ul li {
+  float: left;
+  width: 4.1rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  border-radius: 0.1rem;
+  position: relative;
+}
+.tjbox ul li img {
+  width: 4.1rem;
+  height: 2.3rem;
+  display: block;
+  border-radius: 0.1rem;
+}
+.tjbox ul li h4 {
+  width: 3.7rem;
+  height: 0.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom-right-radius: 0.1rem;
+  border-bottom-left-radius: 0.1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 0.24rem;
+  line-height: 0.5rem;
+  font-weight: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 0.2rem;
+}
+.datebox {
+  background: url(../../static/newimages/time_bg.png) no-repeat center top;
+  color: #fff;
+  width: 2.6rem;
+  height: 0.67rem;
+  line-height: 0.67rem;
+  font-size: 0.3rem;
+  text-align: center;
+  margin-bottom: 0.4rem;
+  margin-top: 0.8rem;
+}

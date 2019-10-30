@@ -1,0 +1,774 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<meta http-equiv="Page-Enter" content="blendTrans(Duration=1.0)"/>
+<meta name="VISCore-Version" content="VIS-VISCORE-4.7.6-20190716" />
+<meta name="page-view-size" content="1280*720" />
+<title>HD???��??��?2.0</title>
+    <script src="/vasroot/viscore/jsapi/hd_js_common?partner=HW2X&epg_url=http%3A%2F%2F113.136.42.38%3A8282%2FEPG%2Fjsp%2F%2Fxagqkdb%2Fen%2FHD_vasToMemInterface.jsp&is_back_from=0&rnd=7001" language="JavaScript"></script>
+</head>
+<link href="http://222.91.94.9:81/vasroot/vis_images/css/hd.css" rel="stylesheet" type="text/css" />
+<body bgcolor="transparent" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" scroll="no">
+
+<style type="text/css">
+    .textstyle {
+        height:22px;
+        line-height:22px;
+        font-size:20px;
+        font-family:????;
+        color:#ffffff;
+
+    }
+    .transform{
+        -webkit-transition-duration:0ms;
+    }
+    .untransform{
+        -webkit-transition-duration:0ms;
+    }
+</style>
+<script src="/vasroot/viscore/portal/views/js/vis.js?v=VIS-VISCORE-4.7.6-20190716" language="JavaScript"></script>
+<script src="/vasroot/viscore/portal/views/js/ls.js?v=VIS-VISCORE-4.7.6-20190716" language="JavaScript"></script>
+<div id="background" style="position:absolute; left:0px; top:0px; width:1280px; height:720px;z-index:1;">
+    <img border='0' src='/vasroot/templates/templatepackage_hq_11102085/view/images/film_detail1.png'  height='720px'  width='1280px' >
+</div>
+
+<style type="text/css">
+    .transform{
+        -webkit-transition-duration:0ms;
+    }
+    .untransform{
+        -webkit-transition-duration:0ms;
+    }
+</style>
+
+<script>
+    var focus_x = 0;
+    focus_response = {
+        toppos : {
+            on : function () {
+                var _ele = $('#' + this.id);
+                _ele.style.display = "block";
+            },
+            lost : function () {
+                var _ele = $('#' + this.id);
+                _ele.style.display ="none";
+            },
+            ok : function () {
+
+                if( typeof(new_flag) !="undefined")
+                    ls.set('new_flag', new_flag);
+                if( "undefined" != typeof(cur_rows))
+                     ls.set('cur_rows',cur_rows);
+                if("undefined" != typeof(total_rows))
+                    ls.set('total_rows',total_rows);
+                if("undefined" != typeof(next_seq))
+                    document.forms[0].cur_page_seq.value = next_seq;
+
+                var focustemp = Focus.getHistory();
+                var url = this.data.url;
+                if(this.data.type == 1)// protal
+                {
+                    back_portal();
+
+                }
+                else {
+                    if (url.length > 0) {
+                        var record = 1;
+                        if (url.indexOf("play/") == 0) {
+                            record = 0;
+                        }
+                        vis_to_rewrite(url, focustemp, record);
+                    }
+                }
+            }
+        }
+    }
+
+    //??����?��?????��
+    var main_focus   = new FocusNode(); //main_focus???��?????????��????����??????��??????��?��??js??????window???��
+
+    //????????
+    var top_pos_focus = new FocusNode({
+        x                 : 0,
+        y                 : 0,
+        id             : 'top',
+        event_agent    : focus_response.toppos,
+        cache          : 1,
+        onEnter        : function () {
+        }
+    });
+    main_focus.addChild(top_pos_focus);
+
+    var oldback=page_back;
+    var back_portal=function (){
+        vis_onunload();
+        back_url = get_stack_top(vis_url_history);
+        var url = '/vasroot/viscore/'+'portal/biz_hq_11102098';
+
+        while(back_url !=url)
+        {
+            if(back_url == "" )
+            {
+                //??????��??��??????��???????
+                if (window.ls) {
+                    ls.clear();
+                }
+                if(epg_url != ""){
+                    back_url = epg_url+'?vas_info=' + encodeURI('<vas_action>back</vas_action>');
+                }
+                break;
+            }
+            else {
+                if (window.ls) {
+                    ls.pageClear();
+                }
+            }
+
+
+            vis_url_history = pop_stack(vis_url_history);
+            back_focus_index = pop_stack(back_focus_index);
+            param_history = pop_stack(param_history);
+            page_history = pop_stack(page_history);
+
+            back_url = get_stack_top(vis_url_history);
+
+        }
+        oldback();
+    }
+</script>
+<!--��????��??��???-->
+<div  style="display:block;position:absolute;left:25px;top:19px;width:172px;height:65px;z-index:3;">
+    <img src="/vasroot/templates/templatepackage_hq_11102085/view/images/logo.png" width="172" height="65" border="0">
+</div>
+<div id="portal_btn_focus" style="display:none;position:absolute;left:22px;top:17px;width:179px;height:70px;z-index:4;">
+    <img src="/vasroot/templates/templatepackage_hq_11102085/view/images/logo_focus.png" width="179" height="70">
+</div>
+<script>
+    top_pos_focus.addChild(new FocusNode({
+        x:focus_x,
+        y: 0,
+        id:'portal_btn_focus',
+        data:{
+            url:'portal/biz_hq_11102098',
+            history:0,
+            type:1
+
+        }
+    }));
+    focus_x++;
+</script>
+
+<!--?????��-->
+
+<!--????????-->
+<div id="person" style="position:absolute;left:1096px;top:34px;width:112px;height:28px;z-index:2;">
+    <img border='0' src='http://222.91.94.9:81/vasroot/vis_images/201811/CategoryItem_4819_08100722.png'  height='28px'  width='112px' >
+</div>
+<div id="person_focus" style="display:none;position:absolute;left:1085px;top:24px;width:135px;height:49px;z-index:3;">
+    <img src="/vasroot/templates/templatepackage_hq_11102085/view/images/person_focus.png" width="135" height="49">
+</div>
+<script>
+    top_pos_focus.addChild(new FocusNode({
+        x:focus_x,
+        y:0,
+        id:'person_focus',
+        data:{
+            url:'http://222.91.94.9:80/vasroot/IPM/modules/history/like.html?code=biz_hq_11102098&type=one',
+            type:3
+        }
+    }));
+    focus_x++;
+
+</script>
+
+<script>
+    var focus_response = {
+        movielist : {
+            on : function () {
+                var _ele = $('#' + this.id);
+                var i = this.x;
+                _ele.style.backgroundImage = "url("+'/vasroot/templates/templatepackage_hq_11102085'+"/view/images/detail_poster_focus.png)";
+                //???��??????
+                if(typeof(this.data.name) != 'undefined' && this.data.name.subCHStr(16,2)!=''){
+                    $("#movie_name_" + i).innerHTML = "<marquee Scrollamount='4'>"+ this.data.name +"</marquee>";
+                }else{
+                    $("#movie_name_"+i).innerHTML=this.data.name.subCHStr(0,16);
+                }
+            },
+            lost : function () {
+                var i = this.x;
+                var _ele = $('#' + this.id);
+                $("#movie_name_"+i).innerHTML=this.data.name.subCHStr(0,16);
+                _ele.style.backgroundImage ="";
+            },
+            ok : function () {
+                var focustemp = Focus.getHistory();
+                var url = this.data.url;
+                var record = 1;
+                if(url.indexOf("play/") == 0){
+                    record = 0;
+                }
+                if(url.length > 0) {
+                    vis_to_rewrite(url, focustemp, record,0);
+
+                }
+            }
+        },
+        filter: {
+            on : function () {
+                var _ele = $('#' + this.id);
+                _ele.style.backgroundImage = "url("+'/vasroot/templates/templatepackage_hq_11102085'+"/view/images/detail_tag_focus.png)";
+            },
+            lost : function () {
+                var _ele = $('#' + this.id);
+                _ele.style.backgroundImage = "";
+            },
+            ok : function () {
+                ls.set('cur_rows',0);
+                ls.set('total_rows',0);
+                ls.set('new_flag',0);
+                if(this.data.type == 1)  //type
+                {
+                    document.forms[0].genrename.value = '??����,?��??,��?��?';
+                    document.forms[0].region.value =0;
+                }
+                else if(this.data.type == 2)//region
+                {
+                    document.forms[0].genrename.value='????';
+                    document.forms[0].region.value ='2';
+                }
+                var focustemp = Focus.getHistory();
+                var url = 'portal/biz_hq_11102098/category/category_hq_11114451';
+                if(url.length > 0) {
+                    vis_to_rewrite(url,focustemp,1);
+
+                }
+            }
+        },
+        playbtn : {
+            on : function () {
+                var _ele = $('#' + this.id);
+                _ele.style.backgroundImage = "url("+'/vasroot/templates/templatepackage_hq_11102085'+"/view/images/detail_language_focus.png)";
+                _ele.style.backgroundSize="90px 50px";
+            },
+            lost : function () {
+                var _ele = $('#' + this.id);
+                _ele.style.backgroundImage = "";
+            },
+            ok : function () {
+                var focustemp = Focus.getHistory();
+                var url = this.data.url;
+                var record = 1;
+                if(url.indexOf("play/") == 0){
+                    record = 0;
+                }
+                if(url.length > 0) {
+                    vis_to_rewrite(url, focustemp, record);
+
+                }
+            }
+        },
+    collectbtn:{
+        on: function () {
+            $("#collect_focus").style.backgroundImage = "url("+'/vasroot/templates/templatepackage_hq_11102085'+"/view/images/detail_collect_focus.png)";
+        },
+        lost : function () {
+            $("#collect_focus").style.backgroundImage = "";
+        },
+        ok : function () {
+            if(flag == true) {
+                flag = false;
+                return;
+            }
+            fav_update(action_type);
+        }
+    },
+    trailer : {
+        on : function () {
+            var _ele = $('#' + this.id);
+            _ele.style.backgroundImage = "url("+'/vasroot/templates/templatepackage_hq_11102085'+"/view/images/message_trailer_focus.png)";
+        },
+        lost : function () {
+            var _ele = $('#' + this.id);
+            _ele.style.backgroundImage = "";
+        },
+        ok : function () {
+            var focustemp = Focus.getHistory();
+            var url = this.data.url;
+            var record = 1;
+            if(url.indexOf("play/") == 0){
+                record = 0;
+            }
+            if(url.length > 0) {
+                vis_to_rewrite(url, focustemp, record);
+             }
+            }
+        }
+    };
+    var  content_focus = new  FocusNode({
+        x              : 0,
+        y              : 1,
+        id             : 'content',
+        cache          : 1,
+        onEnter        : function () {
+        }
+    });
+    var  movielist_focus =  new  FocusNode({
+        x              : 0,
+        y              : 2,
+        id             : 'movielist',
+        event_agent    :focus_response.movielist,
+        cache          : 1,
+        onEnter        : function () {
+        }
+
+    });
+    main_focus.addChild(content_focus);
+    main_focus.addChild(movielist_focus);
+    var focus_x = 0;
+    
+    var trailer_focus = new FocusNode({
+        x:  focus_x,
+        y:  0,
+        id: 'trailer',
+        event_agent: focus_response.trailer
+    });
+        focus_x++;
+        content_focus.addChild(trailer_focus);
+            var right_focus = new FocusNode({
+        x:  focus_x,
+        y:  0,
+        id: 'right',
+        cache: 1
+    });
+    content_focus.addChild(right_focus);
+    var  filter_focus =  new  FocusNode({
+        x              : 0,
+        y              : 0,
+        id             : 'filter',
+        event_agent    :focus_response.filter,
+        cache          : 1,
+        onEnter        : function () {
+        }
+
+    });
+    var btn_focus = new  FocusNode({
+        x              : 0,
+        y              : 1,
+        id             : 'btn',
+        cache          : 1,
+        onEnter        : function () {
+        }
+
+    });
+    right_focus.addChild(filter_focus);
+    right_focus.addChild(btn_focus);
+
+    var  collectbtn_focus =  new  FocusNode({
+        x              : 0,
+        y              : 0,
+        id             : 'collectbtn',
+        event_agent    :focus_response.collectbtn,
+        cache          : 1,
+        onEnter        : function () {
+        }
+
+    });
+    var  playbtn_focus =  new  FocusNode({
+        x              : 1,
+        y              : 0,
+        id             : 'playbtn',
+        event_agent    :focus_response.playbtn,
+        cache          : 1,
+        onEnter        : function () {
+        }
+
+    });
+    btn_focus.addChild(collectbtn_focus);
+    btn_focus.addChild(playbtn_focus);
+
+</script>
+
+<!--????trailer-->
+    <script>
+    function vis_get_focus() {
+        if (top.EPG) {
+            if (top.EPG.EPG) {
+                top.EPG.EPG.focus();
+            }
+            else {
+                top.EPG.focus();
+            }
+        } else if (top.mainWin) {
+            if (top.mainWin.EPG) {
+                if(top.mainWin.EPG.EPG){
+                    top.mainWin.EPG.EPG.focus();
+                }else{
+                    top.mainWin.EPG.focus();
+                }
+            }else{
+                top.mainWin.focus();
+            }
+        }
+    }
+
+</script>
+<div id="smarty_trailer" style="position:absolute;left:68px; top:88px;width:676px;height:383px;">
+    <iframe name="smarty_trailer_if_smallvod" onload="javascript:vis_get_focus();" width="676px" height="383px" src="http://113.136.42.38:8282/EPG/jsp//xagqkdb/en/HD_vasToMemInterface.jsp?vas_info=%3Cvas_action%3Eplay_trailer%3C%2Fvas_action%3E%3Cleft%3E68%3C%2Fleft%3E%3Ctop%3E88%3C%2Ftop%3E%3Cwidth%3E676%3C%2Fwidth%3E%3Cheight%3E383%3C%2Fheight%3E%3Cmediacode%3EUmai%3APROG%2F4872129%40BESTV.SMG.SMG%3C%2Fmediacode%3E%3Cmediatype%3EVOD%3C%2Fmediatype%3E%3Ccycle%3E1%3C%2Fcycle%3E%3Csize%3Ehd%3C%2Fsize%3E&type=frame"></iframe>
+</div>
+<div id="trailer_focus" style="position:absolute;left:61px; top:82px;width:693px;height:400px;z-index:3;">
+</div>
+<script>
+    trailer_focus.addChild(new FocusNode({
+        x:0,
+        y: 0,
+        id:'trailer_focus',
+        data:{
+            url:'play/vod/media_code/VW1haSUzQVBST0clMkY0ODcyMTI5JTQwQkVTVFYuU01HLlNNRw__/portal/biz_hq_11102098/category/category_hq_11108518/c_detail_type/movie/c_detail_code/bW92aWVfY21zXzExOTI3Nzgz'
+
+        }
+    }));
+</script>
+                                    <!--??????trailer-->
+<!--???�����?��????-->
+    <div style="position:absolute;left:760px;top:101px;width:434px;height:24px;color:#f6C938;font-size:22px;font-family:????;text-align:left;z-index:2;">?��??2</div>
+    <div class ="textstyle" style="position:absolute;left:760px;top:134px;width:60px;z-index:2;">??????</div>
+    <div class ="textstyle" style="position:absolute;left:760px;top:165px;width:60px;z-index:2;">?��????</div>
+    <div class ="textstyle" style="position:absolute;left:760px;top:196px;width:60px;z-index:2;">?��????</div>
+    <div class ="textstyle" style="position:absolute;left:1041px;top:134;width:60px;z-index:2;">?��?��??</div>
+    <div class ="textstyle" style="position:absolute;left:1041px;top:165px;width:60px;z-index:2;">?��?��??</div>
+    <div class ="textstyle" style="position:absolute;left:1041px;top:196px;width:60px;z-index:2;">??????</div>
+
+    <div class ="textstyle" style="position:absolute;left:820px;top:134px;width:211px;z-index:2;">??????</div>
+    <div class ="textstyle" style="position:absolute;left:820px;top:165px;width:211px;z-index:2;">??????/???��??</div>
+            <div class ="textstyle" style="position:absolute;left:820px;top:192px;width:53px;height:30px;z-index:2;background-image:url('/vasroot/templates/templatepackage_hq_11102085/view/images/purple.gif');text-align:center;">
+            <p style="margin:3px auto;text-align:center;">??����</p>
+        </div>
+        <div id="movie_type_focus"  style="position:absolute;left:814px;top:185px;width:66px;height:44px;z-index:2"></div>
+        <script>
+            filter_focus.addChild(new FocusNode({
+                        x:0,
+                        y:0,
+                        id:"movie_type_focus",
+                        data:{
+                            url:'portal/biz_hq_11102098/category/category_hq_11114451',
+                            type:1
+                        }
+            }));
+        </script>
+        <div class ="textstyle" style="position:absolute;left:1101px;top:134;width:97px;z-index:2;">100��???</div>
+    <div class ="textstyle" style="position:absolute;left:1101px;top:165px;width:97px;z-index:2;">2019</div>
+        <div class ="textstyle" style="position:absolute;left:1101px;top:192px;width:53px;height:30px;z-index:2;background-image:url('/vasroot/templates/templatepackage_hq_11102085/view/images/red.gif');text-align:center;">
+         <p style="margin:3px auto;text-align:center;">???��</p>
+    </div>
+    <div id="movie_region_focus"  style="position:absolute;left:1095px;top:185px;width:66px;height:44px;z-index:3;"></div>
+    <script>
+        filter_focus.addChild(new FocusNode({
+            x:1,
+            y:0,
+            id:"movie_region_focus",
+            data:{
+                url:'portal/biz_hq_11102098/category/category_hq_11114451',
+                type:2
+            }
+        }));
+    </script>
+    <div class ="textstyle" style="position:absolute;left:760px;top:243px;width:434px;z-index:2;">?��?��?????????��???��?��?????��??????????????????????��??��???��??????��??��??����???????????��?????��??��????????��????????</div>
+
+<div id="fav_node" style="position:absolute; left:760px; top:377px;width:86px; height:86px;z-index:3;">
+        <img border='0' src='/vasroot/templates/templatepackage_hq_11102085/view/images/collection_yes.gif'  height='86px'  width='86px' >
+    </div>
+<div id="collect_focus" style="position:absolute; left:754px; top:372px;width:99px; height:97px;z-index:3;">
+</div>
+<script>
+    collectbtn_focus.addChild(new FocusNode({
+        x:0,
+        y:0,
+        id:"collecct_focus",
+        data:{
+            action : 'add'
+        }
+    }));
+    </script>
+<div style="position:absolute;left:867px;top:377px;width:80px;height:40px;z-index:2">
+    <img src="/vasroot/templates/templatepackage_hq_11102085/view/images/hd.gif" width="80" height="40" border="0" />
+</div>
+<div style="position:absolute; left:949px; top:377px; width:80px; height:40px;z-index:2;">
+    <img border='0' src='/vasroot/templates/templatepackage_hq_11102085/view/images/putonghu.gif'  height='40px'  width='80px' >
+    </div>
+<div id="hdicon_focus_0" style="position:absolute; left:944px; top:372px; width:90px; height:50px;z-index:3;">
+</div>
+<script>
+    playbtn_focus.addChild(new FocusNode({
+        x:0,
+        y:0,
+        id:"hdicon_focus_0",
+        data:{
+            url:'play/vod/media_code/VW1haSUzQVBST0clMkY0OTM0Mjc0JTQwQkVTVFYuU01HLlNNRw__/portal/biz_hq_11102098/category/category_hq_11108518/c_detail_type/movie/c_detail_code/bW92aWVfY21zXzExOTI3Nzgz'
+        }
+    }));
+
+</script>
+
+<div style="position:absolute;left:867px;top:423px;width:80px;height:40px;z-index:2;">
+    <img src="/vasroot/templates/templatepackage_hq_11102085/view/images/sd.gif" width="80" height="40" border="0" />
+</div>
+<div style="position:absolute; left:949px; top:423px; width:80px; height:40px;z-index:2;">
+    <img border='0' src='/vasroot/templates/templatepackage_hq_11102085/view/images/putonghu.gif'  height='40px'  width='80px' >
+    </div>
+<div id= "sdicon_focus_0" style="position:absolute; left:944px; top:418.5px; width:90px; height:50px;z-index:3;">
+</div>
+<script>
+    playbtn_focus.addChild(new FocusNode({
+        x:0,
+        y:1,
+        id:"sdicon_focus_0",
+        data:{
+            url:'play/vod/media_code/VW1haSUzQVBST0clMkY0OTM0MjczJTQwQkVTVFYuU01HLlNNRw__/portal/biz_hq_11102098/category/category_hq_11108518/c_detail_type/movie/c_detail_code/bW92aWVfY21zXzExOTI3Nzgz'
+
+        }
+    }));
+
+</script>
+
+<!--????-->
+<div style="position:absolute;left:67px;top:500px;width:175px;height:145px;z-index:2;">
+    <img border='0' src='http://222.91.94.9:81/vasroot/vis_images/201908/CategoryItem_6543_30142212.jpg'  height='145px'  width='175px' >
+</div>
+        <div style="position:absolute;left:67px;top:500px;width:50px;height:50px;z-index:3;">
+        <img src="/vasroot/templates/templatepackage_hq_11102085/view/images/vip.png"  width="50" height="50" border="0">
+    </div>
+    
+<div id="movie_name_0" style="position:absolute;left:67px;top:653px;width:175px;height:22px;font-size:20px;font-fmaily:????;color:#ffffff;text-align:center;z-index:2;">
+    ?????????������??</div>
+
+<div id="movie_focus_0" style="position:absolute;left:61px;top:494px;width:188px;height:157px;z-index:3;">
+</div>
+<script>
+    movielist_focus.addChild(new FocusNode({
+        x:0,
+        y:0,
+        id:"movie_focus_0",
+        data:{
+            url:'portal/biz_hq_11102098/detail/category_hq_11107879/detail_type/movie/detail_code/bW92aWVfY21zXzExOTAzMzgx',
+            name:'?????????������??'
+
+        }
+    }));
+</script>
+<div style="position:absolute;left:258px;top:500px;width:175px;height:145px;z-index:2;">
+    <img border='0' src='http://222.91.94.9:81/vasroot/vis_images/201908/CategoryItem_7663_16163646.jpg'  height='145px'  width='175px' >
+</div>
+    
+<div id="movie_name_1" style="position:absolute;left:258px;top:653px;width:175px;height:22px;font-size:20px;font-fmaily:????;color:#ffffff;text-align:center;z-index:2;">
+    ??��??��?����?</div>
+
+<div id="movie_focus_1" style="position:absolute;left:252px;top:494px;width:188px;height:157px;z-index:3;">
+</div>
+<script>
+    movielist_focus.addChild(new FocusNode({
+        x:1,
+        y:0,
+        id:"movie_focus_1",
+        data:{
+            url:'portal/biz_hq_11102098/detail/category_hq_11107879/detail_type/movie/detail_code/bW92aWVfY21zXzExODUzNjA1',
+            name:'??��??��?����?'
+
+        }
+    }));
+</script>
+<div style="position:absolute;left:449px;top:500px;width:175px;height:145px;z-index:2;">
+    <img border='0' src='http://222.91.94.9:81/vasroot/vis_images/201908/CategoryItem_6613_14165235.jpg'  height='145px'  width='175px' >
+</div>
+        <div style="position:absolute;left:449px;top:500px;width:50px;height:50px;z-index:3;">
+        <img src="/vasroot/templates/templatepackage_hq_11102085/view/images/vip.png"  width="50" height="50" border="0">
+    </div>
+    
+<div id="movie_name_2" style="position:absolute;left:449px;top:653px;width:175px;height:22px;font-size:20px;font-fmaily:????;color:#ffffff;text-align:center;z-index:2;">
+    ???��????</div>
+
+<div id="movie_focus_2" style="position:absolute;left:443px;top:494px;width:188px;height:157px;z-index:3;">
+</div>
+<script>
+    movielist_focus.addChild(new FocusNode({
+        x:2,
+        y:0,
+        id:"movie_focus_2",
+        data:{
+            url:'portal/biz_hq_11102098/detail/category_hq_11107879/detail_type/movie/detail_code/bW92aWVfY21zXzExOTIxOTA4',
+            name:'???��????'
+
+        }
+    }));
+</script>
+<div style="position:absolute;left:640px;top:500px;width:175px;height:145px;z-index:2;">
+    <img border='0' src='http://222.91.94.9:81/vasroot/vis_images/201908/CategoryItem_8764_06152503.jpg'  height='145px'  width='175px' >
+</div>
+    
+<div id="movie_name_3" style="position:absolute;left:640px;top:653px;width:175px;height:22px;font-size:20px;font-fmaily:????;color:#ffffff;text-align:center;z-index:2;">
+    ??��??��???��?����?</div>
+
+<div id="movie_focus_3" style="position:absolute;left:634px;top:494px;width:188px;height:157px;z-index:3;">
+</div>
+<script>
+    movielist_focus.addChild(new FocusNode({
+        x:3,
+        y:0,
+        id:"movie_focus_3",
+        data:{
+            url:'portal/biz_hq_11102098/detail/category_hq_11107879/detail_type/movie/detail_code/bW92aWVfY21zXzExODQxMTgz',
+            name:'??��??��???��?����?'
+
+        }
+    }));
+</script>
+<div style="position:absolute;left:831px;top:500px;width:175px;height:145px;z-index:2;">
+    <img border='0' src='http://222.91.94.9:81/vasroot/vis_images/201908/CategoryItem_2381_09155706.jpg'  height='145px'  width='175px' >
+</div>
+    
+<div id="movie_name_4" style="position:absolute;left:831px;top:653px;width:175px;height:22px;font-size:20px;font-fmaily:????;color:#ffffff;text-align:center;z-index:2;">
+    ????????��???????</div>
+
+<div id="movie_focus_4" style="position:absolute;left:825px;top:494px;width:188px;height:157px;z-index:3;">
+</div>
+<script>
+    movielist_focus.addChild(new FocusNode({
+        x:4,
+        y:0,
+        id:"movie_focus_4",
+        data:{
+            url:'portal/biz_hq_11102098/detail/category_hq_11107879/detail_type/movie/detail_code/bW92aWVfaHFfMTA5OTA2MTY_',
+            name:'????????��?????????????'
+
+        }
+    }));
+</script>
+<div style="position:absolute;left:1022px;top:500px;width:175px;height:145px;z-index:2;">
+    <img border='0' src='http://222.91.94.9:81/vasroot/vis_images/201908/CategoryItem_0054_05173405.jpg'  height='145px'  width='175px' >
+</div>
+        <div style="position:absolute;left:1022px;top:500px;width:50px;height:50px;z-index:3;">
+        <img src="/vasroot/templates/templatepackage_hq_11102085/view/images/vip.png"  width="50" height="50" border="0">
+    </div>
+    
+<div id="movie_name_5" style="position:absolute;left:1022px;top:653px;width:175px;height:22px;font-size:20px;font-fmaily:????;color:#ffffff;text-align:center;z-index:2;">
+    ???��??��?</div>
+
+<div id="movie_focus_5" style="position:absolute;left:1016px;top:494px;width:188px;height:157px;z-index:3;">
+</div>
+<script>
+    movielist_focus.addChild(new FocusNode({
+        x:5,
+        y:0,
+        id:"movie_focus_5",
+        data:{
+            url:'portal/biz_hq_11102098/detail/category_hq_11107879/detail_type/movie/detail_code/bW92aWVfY21zXzExOTExMzU2',
+            name:'???��??��?'
+
+        }
+    }));
+</script>
+<script>
+    var action_type = 'add';
+    var indexData=[];
+    var  flag = false;
+    //??????????
+    function init() {
+        var ajaxUrl = 'http://222.91.94.9:80/vasroot/viscore/portal/biz_hq_11102098/detail/category_hq_11108518/detail_type/movie/detail_code/bW92aWVfY21zXzExOTI3Nzgz'+'?get_action=1&epg_info='+'<server_ip>113.136.42.38</server_ip><group_name>25</group_name><group_path></group_path><oss_user_id>29061797089</oss_user_id><page_url>http://113.136.42.38:8282/EPG/jsp//xagqkdb/en/HD_vasToMemInterface.jsp</page_url><partner>HW2X</partner>';
+        getData(ajaxUrl);
+        action_type = indexData[0]['action_type'];
+        fav_padding(action_type);
+        if(is_back_from ==1) {
+            flag = true;
+            if ((typeof(region) == 'undefined' || region.length < 1) && focus_index.length > 1) {
+                region = focus_index;
+            }
+            if (typeof(region) !== 'undefined' && region.length > 1) {
+                Focus.initByhistory(main_focus, region);
+                Focus.node.parent.onEnter();
+            }
+            else {
+                var f = playbtn_focus.getFirstChild();
+                if(f)
+                    Focus.init(playbtn_focus.getFirstChild());
+                else  Focus.init(collectbtn_focus.getFirstChild());
+                Focus.node.parent.onEnter();
+            }
+        }
+        else {
+            var f = playbtn_focus.getFirstChild();
+            if(f)
+                Focus.init(playbtn_focus.getFirstChild());
+            else  Focus.init(collectbtn_focus.getFirstChild());
+            Focus.node.parent.onEnter();
+        }
+    }
+
+    function fav_padding(data){
+        if(data=='del'){
+            $("#fav_node").innerHTML = "<img border='0' src='/vasroot/templates/templatepackage_hq_11102085/view/images/collection_no.gif'  height='86px'  width='86px' >";
+        }else{
+            $("#fav_node").innerHTML = "<img border='0' src='/vasroot/templates/templatepackage_hq_11102085/view/images/collection_yes.gif'  height='86px'  width='86px' >";
+        }
+    }
+
+    function fav_update(action) {
+        var ajaxUrl = 'http://222.91.94.9:80/vasroot/viscore/portal/biz_hq_11102098/detail/category_hq_11108518/detail_type/movie/detail_code/bW92aWVfY21zXzExOTI3Nzgz'+'?action_type='+action+'&epg_info='+'<server_ip>113.136.42.38</server_ip><group_name>25</group_name><group_path></group_path><oss_user_id>29061797089</oss_user_id><page_url>http://113.136.42.38:8282/EPG/jsp//xagqkdb/en/HD_vasToMemInterface.jsp</page_url><partner>HW2X</partner>';
+        getData(ajaxUrl);
+        action_type = indexData[0]['action_type'];
+        fav_padding(action_type);
+    }
+</script>
+
+<img border="0" width="0px" height="0px" src="/log/uni?p=/vis/detail&a=pv&_h=2&t=1568098316&_v=HW2X&u=29061797089&_b=biz_hq_11102098&_c=category_hq_11108518&_e=movie_cms_11927783&v=1" name='bi_log' id='ba_log'>
+
+<form action="http://222.91.94.9:80/vasroot/viscore/portal/biz_hq_11102098/detail/category_hq_11108518/detail_type/movie/detail_code/bW92aWVfY21zXzExOTI3Nzgz" method="post" accept-charset="gbk">
+<input type="hidden" name="epg_info" value="<server_ip>113.136.42.38</server_ip><group_name>25</group_name><group_path></group_path><oss_user_id>29061797089</oss_user_id><page_url>http://113.136.42.38:8282/EPG/jsp//xagqkdb/en/HD_vasToMemInterface.jsp</page_url><partner>HW2X</partner>"  />
+<input type="hidden" name="purchase_result" value=""  />
+<input type="hidden" name="vis_url_history" value="*/vasroot/viscore/portal/biz_hq_11102098*/vasroot/viscore/portal/biz_hq_11102098/category/category_hq_11108518"  />
+<input type="hidden" name="page_seq" value="1"  />
+<input type="hidden" name="order_flag" value="2"  />
+<input type="hidden" name="ad_path" value="biz_hq_11102098/category_hq_11108518"  />
+<input type="hidden" name="tvbar_name" value="biz_hq_11102098"  />
+<input type="hidden" name="self_url" value="/vasroot/viscore/portal/biz_hq_11102098/detail/category_hq_11108518/detail_type/movie/detail_code/bW92aWVfY21zXzExOTI3Nzgz"  />
+<input type="hidden" name="referer" value="http://222.91.94.9:80/vasroot/viscore/portal/biz_hq_11102098/detail/category_hq_11108518/detail_type/movie/detail_code/bW92aWVfY21zXzExOTI3Nzgz"  />
+<input type="hidden" name="hd_flag" value="1"  />
+<input type="hidden" name="free_time" value="5"  />
+<input type="hidden" name="param_history" value="*YSUzQTIlM0ElN0JzJTNBMTIlM0ElMjJ0b3BtZW51X2NvZGUlMjIlM0JzJTNBMjAlM0ElMjJjYXRlZ29yeV9ocV8xMTEwODUxOCUyMiUzQnMlM0ExMSUzQSUyMmZvY3VzX2luZGV4JTIyJTNCcyUzQTAlM0ElMjIlMjIlM0IlN0Q_*YSUzQTMlM0ElN0JzJTNBMTIlM0ElMjJ0b3BtZW51X2NvZGUlMjIlM0JzJTNBMjAlM0ElMjJjYXRlZ29yeV9ocV8xMTEwODUxOCUyMiUzQnMlM0ExMCUzQSUyMnBhZ2VfdG90YWwlMjIlM0JzJTNBMiUzQSUyMjIzJTIyJTNCcyUzQTExJTNBJTIyZm9jdXNfaW5kZXglMjIlM0JzJTNBMCUzQSUyMiUyMiUzQiU3RA__"  />
+<input type="hidden" name="focus_history" value="***"  />
+<input type="hidden" name="page_history" value="*1*1"  />
+<input type="hidden" name="self_params" value="YSUzQTclM0ElN0JzJTNBMTElM0ElMjJhY3Rpb25fdHlwZSUyMiUzQnMlM0EwJTNBJTIyJTIyJTNCcyUzQTEzJTNBJTIyZGV0YWlsX3JlZ2lvbiUyMiUzQnMlM0ExJTNBJTIyMSUyMiUzQnMlM0E5JTNBJTIyZ2VucmVuYW1lJTIyJTNCcyUzQTAlM0ElMjIlMjIlM0JzJTNBNSUzQSUyMmdlbnJlJTIyJTNCYiUzQTAlM0JzJTNBNiUzQSUyMnJlZ2lvbiUyMiUzQmIlM0EwJTNCcyUzQTYlM0ElMjJjaGFyZ2UlMjIlM0JiJTNBMCUzQnMlM0ExMSUzQSUyMmZvY3VzX2luZGV4JTIyJTNCcyUzQTAlM0ElMjIlMjIlM0IlN0Q_"  />
+<input type="hidden" name="back_focus_index" value="**"  />
+<input type="hidden" name="is_back_from" value="0"  />
+<input type="hidden" name="user_id" value="29061797089"  />
+<input type="hidden" name="trailer" value="1"  />
+<input type="hidden" name="action_type" value=""  />
+<input type="hidden" name="detail_region" value="1"  />
+<input type="hidden" name="genrename" value=""  />
+<input type="hidden" name="genre" value=""  />
+<input type="hidden" name="region" value=""  />
+<input type="hidden" name="charge" value=""  />
+<input type="hidden" name="focus_index" value=""  />
+<input type="hidden" name="page_total" value="1"  />
+</form>
+<script>
+bc_log_url = '/log/uni?p=/vis/detail&a=bc&_h=2&t=1568098316&_v=HW2X&u=29061797089&_b=biz_hq_11102098&_c=category_hq_11108518&_e=movie_cms_11927783&v=1';
+click_log_base_url = '/log/';
+load_page();
+
+if('function' === typeof init){
+    init();
+}
+if (window.env) {
+        if (typeof(env.getAndroidVersion) == 'function') {
+            if (env.getAndroidVersion() > 98) {
+                init();
+            }
+        }
+    }
+</script>
+
+<img border="0" width="0px" height="0px" src="/vasroot/vis_images/img/btn_trans.gif" name='click_log' id='click_log'>
+<img border="0" width="0px" height="0px" src="/vasroot/vis_images/img/btn_trans.gif" name='bc_click_log' id='bc_click_log'>
+<img border="0" width="0px" height="0px"  name='trailer_start_log' src="/log/visplay?rnd=1641781485&a=playstart&_pt=trailer&u=29061797089&s=tvbar&_m=Umai%3APROG%2F4872129%40BESTV.SMG.SMG&_mt=vod&_v=HW2X&_b=biz_hq_11102098&_c=category_hq_11108518&_et=movie&_e=movie_cms_11927783&v=1"><img border="0" width="0px" height="0px" src="/vasroot/vis_images/img/btn_trans.gif" name='bi_trailer_end_log' id='ba_log'>
+</body>
+</html>

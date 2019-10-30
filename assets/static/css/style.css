@@ -1,0 +1,124 @@
+/*reset*/
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,input,selefct,textarea {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;}
+body {font-family:"microsoft yahei","simhei","tahoma";font-weight:normal;}
+ol, ul {list-style: none;}
+em, i, u {font-style: normal;}
+a { text-decoration: none; outline: 0;}
+img{outline: 0;}
+a:hover {text-decoration: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: ”;content: none;}
+.clearfix:after {content: ".";display: block;height: 0;font-size: 0;clear: both;visibility: hidden;}
+.clearfix {zoom:1;}
+/* remember to define focus styles! */
+/* a:focus {outline:2px solid rgba(113,255,90,1);} */
+/* remember to highlight inserts somehow! */
+ins {text-decoration: none;}
+del {text-decoration: line-through;}
+/* tables still need ‘cellspacing=”0″‘ in the markup */
+table {border-collapse: collapse;border-spacing: 0;}
+img {display:inline-block;}
+.r {float: right;}
+.l {float:left;}
+/* .w1760_hw {width:17.6rem;margin:0 auto;text-align:left;position:relative;height: 100%;} */
+.w1760_zte {width:17.6rem;margin:0 auto;text-align:left;position:relative;height: 100%;}
+.w1760 {width:17.6rem;margin:0 auto;text-align:left;position:relative;height: 100%;}
+/* body {width:100%;background:#020f34 url(../images/bg.png) repeat-y center top;height: 100%;} */
+.wrap {width: 100%;font-size: 0;height: 100%;}
+.titbar {height:1rem;margin-bottom: 0.6rem;}
+.titbar .logo,.titbar .top_toolbox {position: absolute;}
+.titbar .logo {left:0;top:0.3rem;width:1.98rem;height:0.67rem;}
+.titbar .logo img {width:1.98rem;height:0.67rem;}
+.titbar .mainnav ul li {display: inline-block;border-radius: 0.1rem;}
+.titbar .mainnav ul li span {width: 2.84rem;height:1rem;line-height:1rem;color:#fff;font-size:0.32rem;text-align: center;font-weight: lighter;display: block;}
+
+.titbar .mainnav ul li a.current {padding:0 0.2rem;height:0.6rem;line-height:0.6rem;background:rgba(6,153,34,1);border-radius:0.3rem;}
+.titbar .top_toolbox {right:0;top:0.37rem;}
+.titbar .top_toolbox img {display: inline-block; vertical-align: middle;}
+.titbar .top_toolbox li {display: inline-block; vertical-align: middle;}
+.titbar .top_toolbox li a {display:block;}
+.titbar .top_toolbox .btn_search,.titbar .top_toolbox .btn_getvip {height:0.5rem;line-height:0.5rem;background-color:rgba(255,255,255,0.1);border-radius:0.25rem;color:#fff;font-weight: lighter;font-size:0.22rem;padding: 0.1rem 0.2rem;}
+.btn_login {width:0.36rem;height:0.36rem;border-radius:0.18rem;}
+.titbar .top_toolbox .btn_search img,.titbar .top_toolbox .btn_getvip img {margin-right:0.1rem;}
+.titbar .top_toolbox .btn_search {margin-right: 0.25rem;}
+.titbar .top_toolbox .btn_search img {width: 0.22rem;height:0.22rem;}
+.titbar .top_toolbox .btn_getvip {margin-left: 0.25rem;}
+.titbar .top_toolbox .btn_getvip img {width: 0.31rem;height:0.27rem;}
+.titbar .top_toolbox .btn_login img {width:0.36rem;height:0.36rem;margin-top: -0.1rem}
+
+#zSlider {margin:0rem auto 0.6rem;width:17.6rem;text-align: left;}
+#picshow {width:11.4rem;height:5.65rem;float:left;}
+#picshow_img {width:11.4rem;height:5.65rem;float:left;}
+#picshow_img li {width:11.4rem;height:5.65rem;float:left;display:none;}
+#picshow_img li a {display: block; overflow: hidden;width:11.4rem;height:5.65rem;}
+#picshow_img img {width:11.4rem;height:4.9rem;display: block;}
+#picshow_img li h3 {background:#00082B;height:0.75rem;line-height:0.75rem;color:#fff;text-indent: 0.2rem;font-size:0.24rem;font-weight: lighter;}
+
+#select_btn {width:5.8rem;height:5.65rem;color:#fff;float:right;}
+#select_btn li {width:5.8rem;margin-bottom:0.03rem;background:#233154;text-indent:0.3rem;}
+#select_btn li:last-child {margin-bottom: 0;}
+#select_btn a {color:#fff;font-size:0.33rem;font-weight: lighter;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;width:5.8rem;height:1.39rem;line-height:1.39rem;display: block;background:#233154;}
+#select_btn li.current a{background:rgba(22,158,0,1);color: #fff;}
+
+.tjbox h2,.tjbox_3 h2,.tjbox_2 h2,.tjbox_4 h2,.keshicate h2 {font-size:0.44rem; font-weight: bold;color:#fff;margin-bottom:0.4rem;}
+.tjbox ul,.tjbox_2 ul,.tjbox_4 ul,.keshicate ul {width:18rem;}
+.tjbox_3 ul {width:13.1rem;}
+.tjbox ul li {width:4.1rem;margin-right:0.4rem;margin-bottom: 0.4rem;display: inline-block;position: relative;}   
+.tjbox_2 ul li {float:left;width:8.6rem;margin-bottom:0.4rem;margin-right: 0.4rem;}
+.tjbox_3 ul li {float:left;width:4.1rem;margin-bottom:0.4rem;}
+.tjbox ul li img {width:100%;height:2.31rem;display: block;border-radius: 0.1rem;}
+.tjbox_2 ul li img {width:8.6rem;height:4.84rem;display: block;border-radius: 0.1rem;}
+.tjbox_3 ul li img {width:4.1rem;height:2.65rem;display: block;border-radius: 0.1rem;}
+.tjbox ul li span,.tjbox_2 ul li span,.tjbox_3 ul li span {display:block;position: relative;}
+.viptips {position: absolute;right:0;top:0;height:0.35rem;width:0.65rem;text-align: center;line-height:0.35rem;color:#fff;font-size:0.2rem;font-weight: bold;background:#AB1717;}
+.catetips {position: absolute;left:0;bottom:0.78rem;text-align: center;color:#fff;font-size:0.25rem;background:url(../images/tips_bg_opa.png) repeat 0 0;width:1.2rem;height:0.4rem;line-height: 0.4rem;font-size:0.25rem;}
+.tjbox ul li h4,.tjbox_2 ul li h4,.tjbox_3 ul li h4{color:#fff;font-size:0.36rem;text-indent:0.17rem;height:0.5rem; line-height:0.5rem;white-space:nowrap;display: block;font-weight: normal;border-radius: 0.2rem;}
+.morebox{width:4.0rem;height:2.65rem; text-align: center;}
+.item_more{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+}
+.tjbox_4 ul li {float:left;margin-right:0.4rem;margin-bottom: 0.4rem;position: relative;height: 2rem;border-radius: 0.1rem;width: 5.6rem;}
+.tjbox_4 ul li span {font-size: 0.4rem;color: white;position: absolute;top: 50%;left: 50%;width: 100%;text-align: center;margin-left: -2.8rem;margin-top: -0.125rem;}
+.tjbox_4 ul li img{
+    border-radius: 0.1rem;
+}
+.play {margin-bottom:0.6rem;}
+.playbox {width:8.9rem;height:5rem;}
+
+.playinfo {width: 8.2rem; position: relative;height:5rem;}
+.playinfo .playtext dt {font-weight: bold;font-size:0.44rem;line-height: 0.33rem;margin-bottom: 0.284rem;color:#fff;}
+.playinfo .playtext dd {font-size:0.22rem;line-height: 0.4rem;color:#fff;}
+.playtoolbar {position: absolute;bottom:0;left:0;}
+.playtoolbar li {float:left;margin-right:0.3rem;}
+.playtoolbar li a {width:1.4rem;height:1.3rem;background:rgba(255,255,255,0.1);display: block;text-align: center;color:#fff;}
+.playtoolbar li a span {display: block;font-size:0.25rem;}
+.playtoolbar li a.collected {background:#169E00;}
+/* 本例子css */
+.tab {margin-bottom:0.6rem;}
+.picScroll_left .prev a,.picScroll_left .next a { display:block;  width:0.28rem; height:0.54rem;margin-top:1.8rem;  overflow:hidden;cursor:pointer;}
+.picScroll_left .prev {float:left;}
+.picScroll_left .next {float:right;}
+.picScroll_left .tabpage { float:left; margin-top:0.1rem; zoom:1;margin-left:0.59rem;}
+.picScroll_left .tabpage li { float:left;margin-right:0.2rem;cursor:pointer;font-size:0.4rem;width: 2rem;text-align: center;}
+.picScroll_left .tabpage li a {color:#fff;padding:0 0.2rem;height:0.5rem;line-height:0.5rem;border-radius:0.25rem;color:#fff;}
+.picScroll_left .tabpage li.current a {padding:0 0.2rem;height:0.5rem;line-height:0.5rem;background:rgba(6,153,34,1);border-radius:0.25rem;color:#fff;}
+.picScroll_left .picList {float:left;margin-left: 0.65rem;width: 16.65rem;}
+.picScroll_left .picList ul {}
+.picScroll_left .picList ul li { margin:0 0.35rem 0.3rem 0; float:left;width:5.2rem;height:1.9rem;}
+.picScroll_left .picList ul li .pic {display:block;background:rgba(255,255,255,0.1);width:5.2rem;height:1.9rem;}
+.picScroll_left .picList ul li .pic img { width:2.5rem; height:1.4rem; display:block;float:left;margin:0.24rem 0 0 0.24rem;}
+.picScroll_left .picList ul li .title { line-height:0.24rem;font-size:0.25rem;color:#fff;float:left;font-weight: normal;margin:0.54rem 0 0 0.2rem;width: 2.1rem;line-height: 0.3rem;}
+.tab h2 {font-size:0.44rem; font-weight: bold;color:#fff;margin-bottom:0.4rem;}
+.keshicate ul li {float:left;width:4.1rem;height:2.6rem;margin-bottom: 0.4rem;}
+.keshicate ul li span {width:100%;height:2.6rem;display:block;position: relative;}
+.keshicate ul li img {width:100%;height:100%;display: block;border-radius: 0.1rem;}
+.keshicate ul li span em {display: block;color:#fff; font-size:0.46rem;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);font-weight: bold;}
+.tjbox ul li.on {width:4.1rem;margin-right:0.4rem;margin-bottom: 0.4rem;height:3.1rem; text-align: center;}
+.tjbox ul li.on img {width:0.88rem;height:0.88rem;display: block;margin: 0.6rem auto 0.4rem;}
+.tjbox ul li.on span {display: block;color:#fff; font-size:0.3rem;}
+
+
+/* 版本二 */

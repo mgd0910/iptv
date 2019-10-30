@@ -1,0 +1,55 @@
+/*reset*/
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,input,selefct,textarea {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;background: transparent;}
+body {font-family:"microsoft yahei","simhei","tahoma";font-weight:normal;text-align:center;}
+ol, ul {list-style: none;}
+em, i, u {font-style: normal;}
+a { text-decoration: none;}
+a:hover {text-decoration: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: ”;content: none;}
+.clearfix:after {content: ".";display: block;height: 0;font-size: 0;clear: both;visibility: hidden;}
+.clearfix {zoom:1;}
+/* remember to define focus styles! */
+a:focus {outline:0;}
+/* remember to highlight inserts somehow! */
+ins {text-decoration: none;}
+del {text-decoration: line-through;}
+/* tables still need ‘cellspacing=”0″‘ in the markup */
+table {border-collapse: collapse;border-spacing: 0;}
+img {display:inline-block;}
+.r {float: right;}
+.l {float:left;}
+html {font-size: calc(100vw/19.2);}
+.w1760 {width:17.6rem;margin:0 auto 0.8rem;text-align:left;position:relative;}
+body {width:100%;background:#090d31;}
+.wrap {width: 100%;font-size: 0;margin-top: 0.6rem;}
+.tj1 {width:8.4rem;height:4.4rem;position: relative;}
+.tj1 a img {width:8.4rem;height:4.4rem;}
+.tj a {border-radius: 0.1rem;}
+.tj a img {border-radius: 0.1rem;position: absolute;left:0;top:0;z-index:9997;}
+.tj a:focus img {left:-0.04rem;top:-0.04rem;border:4px solid #ffd200;box-shadow:0rem 0rem 0.2rem 0.03rem rgba(255,144,0,1);border-radius: 0.1rem;}
+.tj2 {float:left;margin-left:0.4rem;width:8.8rem;height:4.4rem;}
+.tj2 ul {width:9.2rem;height:4.8rem;}
+.tj2 li {width:4.2rem;height:2rem;margin-bottom:0.4rem;float:left;margin-right:0.4rem;position: relative;}
+.tj2 li a em {position: absolute;left:0;top:0.1rem;border-bottom-right-radius:0.06rem;
+    border-top-right-radius:0.06rem;background: #2C39AE;width:0.8rem;height:0.5rem;line-height:0.5rem;color:#fff;text-align: center;font-size:0.24rem;z-index:9998;}
+.tj2 li a img {width:4.2rem;height:2rem;}
+.tj2 li a span {z-index:9999;position: absolute;bottom:0;width:100%;background:url(../images/touming_bg.png) repeat left top;height:0.5rem;line-height:0.5rem;color:#fff;text-align: center;font-size:0.24rem;border-bottom-right-radius:0.1rem;
+    border-bottom-left-radius:0.1rem;}
+
+.w1760 h2 {font-size:0.48rem;color:#fff;margin-bottom: 0.4rem;}
+.fouritem ul {width:18rem;}
+.fouritem li {width:4.1rem;height:2rem;margin-bottom:0.4rem;float:left;margin-right:0.4rem;position: relative;}
+.fouritem li a em {position: absolute;left:0;top:0.1rem;border-bottom-right-radius:0.06rem;
+    border-top-right-radius:0.06rem;background: #2C39AE;width:0.8rem;height:0.5rem;line-height:0.5rem;color:#fff;text-align: center;font-size:0.24rem;z-index:9998;}
+.fouritem li a img {width:4.1rem;height:2rem;}
+.fouritem li a span {z-index:9999;position: absolute;bottom:0;width:100%;background:url(../images/touming_bg.png) repeat left top;height:0.5rem;line-height:0.5rem;color:#fff;text-align: center;font-size:0.24rem;border-bottom-right-radius:0.1rem;
+    border-bottom-left-radius:0.1rem;}
+
+    .fiveitem ul {width:18rem;}
+    .fiveitem li {width:3.2rem;height:1.8rem;margin-bottom:0.4rem;float:left;margin-right:0.4rem;position: relative;}
+    .fiveitem li a em {position: absolute;left:0;top:0.1rem;border-bottom-right-radius:0.06rem;
+        border-top-right-radius:0.06rem;background: #2C39AE;width:0.8rem;height:0.5rem;line-height:0.5rem;color:#fff;text-align: center;font-size:0.24rem;z-index:9998;}
+    .fiveitem li a img {width:3.2rem;height:1.8rem;}
+    .fiveitem li a span {z-index:9999;position: absolute;bottom:0;width:100%;background:url(../images/touming_bg.png) repeat left top;height:0.5rem;line-height:0.5rem;color:#fff;text-align: center;font-size:0.24rem;border-bottom-right-radius:0.1rem;
+        border-bottom-left-radius:0.1rem;}
